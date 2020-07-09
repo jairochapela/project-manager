@@ -8,6 +8,7 @@ const Intervencion = require('./intervencion');
 // Definición de las relaciones entre entidades
 Usuario.belongsToMany(Proyecto, {through: 'participaciones'})
 Proyecto.hasMany(Tarea)
+Tarea.belongsToMany(Usuario, {through: 'asignaciones'})
 Tarea.belongsToMany(Usuario, {as: 'intervenciones', through: Intervencion})
 Usuario.hasOne(Rol)
 Rol.hasMany(Rol, {as: 'heredados'})
