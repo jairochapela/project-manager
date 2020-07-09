@@ -1,0 +1,11 @@
+{
+  "name": "project-manager",
+  "version": "1.0.0",
+  "description": "Gestor de proyectos y tareas con RBAC y seguimiento de tiempos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jairo Chapela Martínez",
+  "license": "ISC"
+}
