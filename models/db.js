@@ -2,8 +2,8 @@
 const Sequelize = require('sequelize');
 
 // Primero definimos sequelize con los parámetros de conexión
-const sequelize = new Sequelize('projectmanager', 'root', 'aaa', {
-    host: '51.91.252.217',
+const sequelize = new Sequelize(process.env.DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
     dialect: 'mariadb'
 });
   
