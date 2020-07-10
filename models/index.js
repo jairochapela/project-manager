@@ -24,5 +24,6 @@ sequelize
   });
 
 module.exports = {
-    sequelize
+    sequelize,
+    Usuario,
 }

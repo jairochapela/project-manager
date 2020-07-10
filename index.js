@@ -2,7 +2,7 @@ require('dotenv').config()
 const express = require('express')
 require('./models')
 
-const {login} = require('./autenticacion')
+const {login} = require('./controllers/autenticacion')
 
 const app = express()
 
