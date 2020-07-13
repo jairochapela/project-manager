@@ -3,7 +3,7 @@ const express = require('express')
 var cookieSession = require('cookie-session')
 const cookieParser = require('cookie-parser')
 
-const {login} = require('./controllers/autenticacion')
+const {login, controlAcceso} = require('./controllers/autenticacion')
 const {dashboard} = require('./controllers/dashboard')
 
 const app = express()
@@ -22,7 +22,7 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 // definición de las rutas
-app.get('/', dashboard)
+app.get('/', controlAcceso(), dashboard)
 app.get('/login', (req, res) => res.render('login'))
 app.post('/login', login)
 
