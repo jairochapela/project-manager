@@ -1,9 +1,10 @@
-const {Usuario} = require('../models')
+const {Usuario} = require('../models');
+const md5 = require('md5');
 
 function login(req, res) {
     const {email, password} = req.body;
 
-    Usuario.findOne({where: {email, password}})
+    Usuario.findOne({where: {email, password: md5(password)}})
     .then(usuario => {
       if (usuario) {
         req.session.usuario = usuario;
