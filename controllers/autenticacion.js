@@ -9,7 +9,7 @@ function login(req, res) {
         req.session.usuario = usuario;
         res.redirect("/");
       } else {
-        res.render("login");
+        res.render("login", {mensaje: "Usuario o contraseña incorrectos."});
       }
     })
 }
