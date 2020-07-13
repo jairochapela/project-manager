@@ -22,7 +22,7 @@ app.set('views', './views')
 app.set('view engine', 'ejs')
 
 // definición de las rutas
-app.get('/', controlAcceso(), dashboard)
+app.get('/', controlAcceso("leer-tareas-asignadas"), dashboard)
 app.get('/login', (req, res) => res.render('login'))
 app.post('/login', login)
 

@@ -1,4 +1,4 @@
-const {Usuario} = require('../models');
+const {Usuario, Rol} = require('../models');
 const md5 = require('md5');
 
 function login(req, res) {
@@ -23,7 +23,17 @@ function login(req, res) {
  */
 function controlAcceso(permiso) {
   return function (req, res, next) {
-    if (req.session.usuario) next()
+    const usuario = req.session.usuario
+
+    if (usuario) {
+      Usuario.findByPk(usuario.id, {
+        include: [Rol]
+      })
+      .then(usuario => {
+        if (usuario && usuario.rol && usuario.rol.permisos.indexOf(permiso) != -1) next()
+        else res.status(403).send("No está autorizado")
+      })
+    }
     else res.redirect("/login")
   }
 }
