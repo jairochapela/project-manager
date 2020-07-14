@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea <%= tarea.id %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+</head>
+<body>
+    <h1>Tarea <%= tarea.id %>: <%= tarea.nombre %></h1>
+    <h2><span class="badge badge-primary"><%= tarea.estado %></span></h2>
+    <p>Fecha de inicio: <%= tarea.fechaInicio %></p>
+    
+    <% if (tarea.fechaVencimiento) { %>
+        <p>Fecha de vencimiento: <%= tarea.fechaVencimiento %></p>
+    <% } %>
+
+    <% if (tarea.fechaFin) { %>
+        <p>Fecha de finalización: <%= tarea.fechaFin %></p>
+    <% } else { %>
+
+        <!-- TODO: acciones sobre la tarea -->
+    <% } %>
+</body>
+</html>
