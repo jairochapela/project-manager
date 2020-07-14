@@ -10,7 +10,7 @@ function dashboard(req, res) {
     .then(usuario => {
         const tareas = usuario.tareas.map(tarea => {
             return {
-                ...tarea,
+                nombre: tarea.nombre,
                 fechaInicio: moment(tarea.fechaInicio).format("DD/MM/YYYY"),
                 fechaVencimiento: tarea.fechaVencimiento && moment(tarea.fechaVencimiento).format("DD/MM/YYYY")
             }
