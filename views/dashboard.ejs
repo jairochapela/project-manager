@@ -20,7 +20,7 @@
         <tbody>
             <% for (var i=0; i<tareas.length; i++) { %>
                 <tr>
-                    <td><%= tareas[i].nombre %></td>
+                    <td><a href="<%= tareas[i].link %>"><%= tareas[i].nombre %></a></td>
                     <td><%= tareas[i].fechaInicio %></td>
                     <td><%= tareas[i].fechaVencimiento %></td>
                 </tr>
