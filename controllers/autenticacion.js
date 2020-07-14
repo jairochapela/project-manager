@@ -30,8 +30,10 @@ function controlAcceso(permiso) {
         include: [Rol]
       })
       .then(usuario => {
-        if (usuario && usuario.rol && usuario.rol.permisos.indexOf(permiso) != -1) next()
-        else res.status(403).send("No está autorizado")
+        if (usuario && usuario.rol && usuario.rol.permisos && usuario.rol.permisos.indexOf(permiso) != -1) 
+          next()
+        else
+          res.status(403).send("No está autorizado")
       })
     }
     else res.redirect("/login")
