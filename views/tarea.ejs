@@ -20,7 +20,14 @@
         <p>Fecha de finalización: <%= tarea.fechaFin %></p>
     <% } else { %>
 
-        <!-- TODO: acciones sobre la tarea -->
+        <form action="<%= tarea.link %>" method="post">
+            <% if (!tarea.iniciada) { %>
+                <button class="btn btn-outline-success" name="accion" type="submit" value="start">Iniciar reloj</button>
+            <% } else { %>
+                <button class="btn btn-outline-primary" name="accion" type="submit" value="stop">Detener reloj</button>
+            <% } %>
+            <button class="btn btn-outline-danger" name="accion" type="submit" value="terminar">Terminar tarea</button>
+        </form>
     <% } %>
 </body>
 </html>
