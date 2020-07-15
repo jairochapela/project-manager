@@ -8,6 +8,7 @@ function mostrarTarea(req, res) {
         res.render('tarea', {
             tarea: {
                 link: "/tareas/" + tarea.id,
+                nombre: tarea.nombre,
                 estado: tarea.fechaFin? "Finalizado" : "Pendiente",
                 intervenciones: tarea.intervenciones,
                 iniciada: tarea.intervenciones.some(x => x.fin==null),
