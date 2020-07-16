@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser')
 const {login, controlAcceso} = require('./controllers/autenticacion')
 const {dashboard} = require('./controllers/dashboard')
 const {mostrarTarea, registrarAccionTarea} = require('./controllers/tareas')
+const { crearProyecto } = require('./api/proyectos')
 
 const app = express()
 
@@ -29,5 +30,8 @@ app.post('/login', login)
 
 app.get('/tareas/:id', mostrarTarea)
 app.post('/tareas/:id', registrarAccionTarea)
+
+// métodos de la API
+app.post('/api/proyectos', crearProyecto)
 
 app.listen(3000)
