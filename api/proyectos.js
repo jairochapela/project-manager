@@ -6,7 +6,7 @@ function crearProyecto(req, res) {
         res.status(201).json(nuevoProyecto)
     })
     .catch(err => {
-        res.status(400).json(err)
+        res.status(400).json(err.message)
     })
 }
 
