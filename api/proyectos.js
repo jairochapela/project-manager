@@ -1,4 +1,4 @@
-const {Proyecto} = require("../models")
+const {Proyecto, Usuario, Tarea} = require("../models")
 
 function crearProyecto(req, res) {
     Proyecto.create(req.body)
@@ -21,7 +21,9 @@ function listarProyectos(req, res) {
 }
 
 function leerProyecto(req, res) {
-    Proyecto.findByPk(req.params.id)
+    Proyecto.findByPk(req.params.id, {
+        include: [{model:Usuario, as:'participantes'}, Tarea]
+    })
     .then(proyecto => {
         if (proyecto) res.status(200).json(proyecto)
         else res.status(404).json("Proyecto no encontrado")
