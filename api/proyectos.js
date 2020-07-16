@@ -10,7 +10,20 @@ function crearProyecto(req, res) {
     })
 }
 
+function listarProyectos(req, res) {
+    Proyecto.findAll()
+    .then(proyectos => {
+        res.status(200).json(proyectos)
+    })
+    .catch(err => {
+        res.status(400).json(err.message)
+    })
+}
+
+
+
 module.exports = {
-    crearProyecto
+    crearProyecto,
+    listarProyectos
     //TODO: añadir más funciones a medida que se vayan haciendo
 }
