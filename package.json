@@ -4,7 +4,8 @@
   "description": "Gestor de proyectos y tareas con RBAC y seguimiento de tiempos.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "jsdoc": "jsdoc -d docs -r api controllers models"
   },
   "author": "Jairo Chapela Martínez",
   "license": "ISC",
@@ -19,5 +20,8 @@
     "md5": "^2.2.1",
     "moment": "^2.27.0",
     "sequelize": "^6.3.0"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.6.5"
   }
 }
