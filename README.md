@@ -11,7 +11,7 @@ El código está distribuido en las siguientes carpetas, atendiendo a su funcion
  * models -> Representación de los modelos de la base de datos
  * views -> Plantillas de las vistas
 
-## Desarrollo en entorno local
+## Desarrollo en entorno local
 
 Para trabajar en este proyecto localmente, se requiere instalar las dependencias de terceros con el siguiente comando:
 
