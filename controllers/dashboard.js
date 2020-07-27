@@ -1,6 +1,15 @@
 const { Usuario, Tarea } = require("../models");
 const moment = require("moment");
 
+
+/**
+ * Esta función es un controlador de Express que se encarga de mostrar las
+ * tareas asignadas a un usuario en concreto.
+ * 
+ * @param {*} req Contiene los datos de la petición, entre los cuales está el
+ * ID del usuario.
+ * @param {*} res Respuesta a la petición.
+ */
 function dashboard(req, res) {
     const usuario = req.session.usuario;
 
