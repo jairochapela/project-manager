@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
     "jsdoc": "jsdoc -d docs -r api controllers models"
   },
   "author": "Jairo Chapela Martínez",
@@ -23,6 +23,9 @@
     "sequelize": "^6.3.0"
   },
   "devDependencies": {
-    "jsdoc": "^3.6.5"
+    "chromedriver": "^84.0.1",
+    "jsdoc": "^3.6.5",
+    "mocha": "^8.1.0",
+    "selenium-webdriver": "^4.0.0-alpha.7"
   }
 }
