@@ -7,7 +7,7 @@ const {login, controlAcceso} = require('./controllers/autenticacion')
 const {dashboard} = require('./controllers/dashboard')
 const {mostrarTarea, registrarAccionTarea} = require('./controllers/tareas')
 const { crearProyecto, listarProyectos, leerProyecto, modificarProyecto, eliminarProyecto } = require('./api/proyectos')
-
+const { crearTarea, listarTareas, leerTarea, modificarTarea, eliminarTarea } = require('./api/tareas')
 const app = express()
 
 app.use(express.urlencoded({ extended: false }))
@@ -38,5 +38,11 @@ app.get('/api/proyectos', listarProyectos)
 app.get('/api/proyectos/:id', leerProyecto)
 app.put('/api/proyectos/:id', modificarProyecto)
 app.delete('/api/proyectos/:id', eliminarProyecto)
+
+app.post('/api/tareas', crearTarea)
+app.get('/api/tareas', listarTareas)
+app.get('/api/tareas/:id', leerTarea)
+app.put('/api/tareas/:id', modificarTarea)
+app.delete('/api/tareas/:id', eliminarTarea)
 
 app.listen(3000)
