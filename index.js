@@ -9,6 +9,7 @@ const {mostrarTarea, registrarAccionTarea} = require('./controllers/tareas')
 const { crearProyecto, listarProyectos, leerProyecto, modificarProyecto, eliminarProyecto } = require('./api/proyectos')
 const { crearTarea, listarTareas, leerTarea, modificarTarea, eliminarTarea } = require('./api/tareas')
 const { crearUsuario, listarUsuarios, leerUsuario, modificarUsuario, eliminarUsuario } = require('./api/usuarios')
+const { crearRol, listarRoles, leerRol, modificarRol, eliminarRol } = require('./api/roles')
 
 const app = express()
 
@@ -52,5 +53,11 @@ app.get('/api/usuarios', listarUsuarios)
 app.get('/api/usuarios/:id', leerUsuario)
 app.put('/api/usuarios/:id', modificarUsuario)
 app.delete('/api/usuarios/:id', eliminarUsuario)
+
+app.post('/api/roles', crearRol)
+app.get('/api/roles', listarRoles)
+app.get('/api/roles/:id', leerRol)
+app.put('/api/roles/:id', modificarRol)
+app.delete('/api/roles/:id', eliminarRol)
 
 app.listen(3000)

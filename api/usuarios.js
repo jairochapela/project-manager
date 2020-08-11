@@ -2,8 +2,8 @@ const { Usuario } = require("../models")
 
 function crearUsuario(req, res) {
     Usuario.create(req.body)
-    .then(nuevaUsuario => {
-        res.status(201).json(nuevaUsuario)
+    .then(nuevoUsuario => {
+        res.status(201).json(nuevoUsuario)
     })
     .catch(err => {
         res.status(400).json(err.message)
