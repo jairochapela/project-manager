@@ -4,7 +4,7 @@
   "description": "Gestor de proyectos y tareas con RBAC y seguimiento de tiempos.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon",
     "test": "mocha",
     "jsdoc": "jsdoc -d docs -r api controllers models"
   },
@@ -26,6 +26,7 @@
     "chromedriver": "^84.0.1",
     "jsdoc": "^3.6.5",
     "mocha": "^8.1.0",
+    "nodemon": "^2.0.4",
     "selenium-webdriver": "^4.0.0-alpha.7"
   }
 }
