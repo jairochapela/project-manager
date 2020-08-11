@@ -23,9 +23,7 @@ function listarTareas(req, res) {
 }
 
 function leerTarea(req, res) {
-    Tarea.findByPk(req.params.id, {
-        include: [{model:Usuario, as:'participantes'}, Tarea]
-    })
+    Tarea.findByPk(req.params.id)
     .then(tarea => {
         if (tarea) res.status(200).json(tarea)
         else res.status(404).json("Tarea no encontrado")
